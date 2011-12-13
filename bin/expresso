@@ -959,6 +959,7 @@ Test.prototype.runSerial = function(callback) {
 
 Test.prototype.runParallel = function() {
     var test = this;
+    test.callback = function(){};
     test.fn(function(fn) {
         test.on('exit', function() {
             fn(test.assert);
